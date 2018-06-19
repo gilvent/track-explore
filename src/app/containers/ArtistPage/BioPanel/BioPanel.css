@@ -1,0 +1,42 @@
+#bio-title-container{
+	text-align:left
+}
+#bio-published{
+	font-size: 90%;
+	font-style: italic
+}
+#bio-content-container{
+	margin-top:1%;
+	height:20em;
+	overflow:auto;
+	overflow-x:hidden;
+	text-align:left;
+	font-size:80%
+}
+
+.custom-scrollbar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: rgba(5, 0, 0, 0);
+    border-radius: 10px;
+    opacity:0
+}
+
+.custom-scrollbar::-webkit-scrollbar
+{
+	width: 10px;
+    background-color: rgba(0, 0, 0, 0.199);
+    opacity:0
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.199);
+	background-image: -webkit-gradient(linear,
+									   40% 0%,
+									   75% 84%,
+									   from(#bb0000),
+									   to(#bb0000),
+									   color-stop(.6,#bb0000))
+}

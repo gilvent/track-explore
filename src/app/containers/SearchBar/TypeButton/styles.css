@@ -1,0 +1,20 @@
+#toggle {
+    background-color:#ce0000;
+    color:white;
+    border-color:#fed1d1 ;
+}
+#toggle:hover{
+    color: #fff;
+    background-color: #fb4049;
+    border-color: #fed1d1;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+    color: #fff;
+    background-color: #ce0000;
+    border-color: #fed1d1;
+}
+
+.toggle-menu-item:hover {
+    background-color:#fed1d1
+}

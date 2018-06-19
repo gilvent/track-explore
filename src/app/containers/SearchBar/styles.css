@@ -1,0 +1,22 @@
+#left-addon {
+    width:10%;  
+    border-color:#FFF;
+    border-style:solid;
+    border-right:none;
+    border-width:1px;
+}
+#search-box {
+    background-color:rgba(0, 0, 0, 0.8);
+    color:#FFFFFF;
+    border-left:none;
+    border-color:white
+}
+#search-bar{
+    background-color:rgba(0, 0, 0, 0.8);
+}
+#search-logo {
+    width:95%;
+    height:95%;
+    padding:10%;
+}
+

@@ -1,0 +1,75 @@
+.center {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+ .react-logo {
+    animation: React-logo-spin infinite 20s linear;
+    height: 4em;
+  }
+
+  @keyframes React-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+.lfm-logo {
+    height:2em;
+    padding:0.5%;
+        -webkit-animation: lfm-orbit 20s linear infinite;  /*Chrome, Safari 5*/
+        -moz-animation: lfm-orbit 20s linear infinite;  /*Firefox 5-15 */
+          -o-animation: lfm-orbit 20s linear infinite;  /*Opera 12+ */
+             animation: lfm-orbit 20s linear infinite; /* Chrome, Firefox 16+,  */
+                                                      /* IE 10+, Safari 5 */   
+  }
+
+@-webkit-keyframes lfm-orbit {
+    from { -webkit-transform: rotate(0deg) translateX(3em) rotate(0deg); }
+    to   { -webkit-transform: rotate(-360deg) translateX(3em) rotate(360deg); }
+}
+
+@-moz-keyframes lfm-orbit {
+    from { -moz-transform: rotate(0deg) translateX(3em) rotate(0deg); }
+    to   { -moz-transform: rotate(-360deg) translateX(3em) rotate(360deg); }
+}
+
+@-o-keyframes lfm-orbit {
+    from { -o-transform: rotate(0deg) translateX(3em) rotate(0deg); }
+    to   { -o-transform: rotate(-360deg) translateX(3em) rotate(360deg); }
+}
+
+@keyframes lfm-orbit {
+    from { transform: rotate(0deg) translateX(3em) rotate(0deg); }
+    to   { transform: rotate(-360deg) translateX(3em) rotate(360deg); }
+}
+
+.mxm-logo {
+    height:2em;
+    padding:0.5%;
+        -webkit-animation: mxm-orbit 20s linear infinite;  /*Chrome, Safari 5*/
+        -moz-animation: mxm-orbit 20s linear infinite;  /*Firefox 5-15 */
+          -o-animation: mxm-orbit 20s linear infinite;  /*Opera 12+ */
+             animation: mxm-orbit 20s linear infinite; /* Chrome, Firefox 16+,  */
+                                                      /* IE 10+, Safari 5 */   
+  }
+
+  @-webkit-keyframes mxm-orbit {
+    from { -webkit-transform: rotate(0deg) translateX(5.5em) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(5.5em) rotate(-360deg); }
+}
+
+@-moz-keyframes mxm-orbit {
+    from { -moz-transform: rotate(0deg) translateX(5.5em) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(5.5em) rotate(-360deg); }
+}
+
+@-o-keyframes mxm-orbit {
+    from { -o-transform: rotate(0deg) translateX(5.5em) rotate(0deg); }
+    to   { -o-transform: rotate(360deg) translateX(5.5em) rotate(-360deg); }
+}
+
+@keyframes mxm-orbit {
+    from { transform: rotate(0deg) translateX(5.5em) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(5.5em) rotate(-360deg); }
+}

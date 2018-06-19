@@ -1,0 +1,29 @@
+  .App {
+
+  }
+  #App-content {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.6), 
+      rgba(0, 0, 0, 0.8)
+    ),url("../../../assets/shutterstock-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height:100vh;
+    background-color:rgb(5, 2, 4);
+  }
+  .App-header {
+    padding: 20px;
+    color: white;
+    width:100%
+  }
+  
+  .App-title {
+    font-size: 1.5em;
+  }
+  
+  .App-intro {
+    font-size: large;
+  }
+  
+
+

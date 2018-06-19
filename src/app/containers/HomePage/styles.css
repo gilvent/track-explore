@@ -1,0 +1,32 @@
+.title-container {
+    text-align: center;
+    margin-top:5%;
+    font-family:"Verdana";
+    color:#dee2e6;
+    font-size:90%;
+}
+
+.searchbox-container{
+    margin-top:1%
+}
+
+.api-link-button{
+    width:10em;
+    margin:1%;
+    font-family: "Verdana";
+    font-size: 80%
+}
+
+#btn-lfm{
+    background-color: #bb0000;
+    border-color:#dee2e6
+}
+#btn-lfm :hover{
+    background-color: rgba(0, 0, 0, 0.322);
+}
+#btn-mxm{
+    background-color: rgba(0, 0, 0, 0.322);
+}
+.sub-heading{
+    color:#dee2e6;
+}
