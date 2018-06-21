@@ -27,3 +27,8 @@
     margin-bottom:1%
 }
 
+.loading-overlay {
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+}

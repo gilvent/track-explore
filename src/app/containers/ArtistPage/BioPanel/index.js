@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Row,Col} from 'reactstrap';
 import {PropTypes} from 'prop-types'
 import './BioPanel.css';
+import NetworkErrorIcon from '../../../components/NetworkErrorIcon';
 
 class BioPanel extends Component {
     static propTypes ={
@@ -16,12 +17,19 @@ class BioPanel extends Component {
                         <h2 style={{color:"#FFFFFF"}}>{data.name}</h2>
                     </Col>
                 </Row>
-                <Row style={{color:"#FFFFFF"}}>
-                    <Col id="bio-published"><span>Bio published on {data.bio_published}</span></Col>
-                    <Col id="bio-content-container" className="custom-scrollbar" md={12} >
-                        {data.bio_content}
-                    </Col>
-                </Row>
+                {
+                    data.bio_content ? 
+                    <Row style={{color:"#FFFFFF"}}>
+                        <Col id="bio-published"><span>Bio published on {data.bio_published}</span></Col>
+                        <Col id="bio-content-container" className="custom-scrollbar" md={12} >
+                            {data.bio_content}
+                        </Col>
+                    </Row> 
+                    :
+                    <NetworkErrorIcon size="3em" margin="5em" text="Failed to load bio" textColor="white"/>
+                }
+                
+                
             </div>
         )
     }

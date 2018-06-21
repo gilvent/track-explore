@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom';
 import {PropTypes} from 'prop-types';
 import classnames from 'classnames';
 import './styles.css';
+import NetworkErrorIcon from '../../../components/NetworkErrorIcon';
 
 export default class Example extends Component {
   constructor(props) {
@@ -87,7 +88,8 @@ export default class Example extends Component {
             <Row>
               <Col sm="12">
                 <ListGroup className="data-list-container">
-                    {topTrackList}
+                    {topTrackList.length!=0?topTrackList:
+                    <NetworkErrorIcon size="3em" margin="5em" text="Failed to load top tracks" textColor="white"/>}
                 </ListGroup>
               </Col>
             </Row>
@@ -96,7 +98,8 @@ export default class Example extends Component {
             <Row>
               <Col sm="12">
                 <ListGroup  className="data-list-container">
-                    {topAlbumsList}
+                    {topAlbumsList.length!=0?topAlbumsList:
+                    <NetworkErrorIcon size="3em" margin="5em" text="Failed to load top albums" textColor="white"/>}
                 </ListGroup>
               </Col>
             </Row>

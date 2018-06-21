@@ -11,8 +11,10 @@ import TypeButton from './TypeButton';
 import searchActions from '../../redux/actions/search';
 import uiActions from '../../redux/actions/ui';
 import searchSelectors from '../../redux/selectors/search';
+import searchUiSelectors from '../../redux/selectors/ui/search';
 
- class SearchBar extends Component{
+
+class SearchBar extends Component{
     constructor(props) {
         super(props);
         this.handleResultToggle = this.handleResultToggle.bind(this);
@@ -64,7 +66,7 @@ import searchSelectors from '../../redux/selectors/search';
 
      render(){
         let {input} = this.state;
-        let {ResultByQuery,CloseSearchResult,searchResultOpen,isLoading,SearchType} = this.props;
+        let {ResultByQuery,CloseSearchResult,searchResultOpen,isLoading,SearchType,errorMessage} = this.props;
         var results = ResultByQuery(input) ? ResultByQuery(input) : {};
          return (
             <div>
@@ -80,6 +82,7 @@ import searchSelectors from '../../redux/selectors/search';
                             onToggle={this.handleResultToggle}
                             searchType={SearchType}
                             isLoading={isLoading}
+                            errorMessage={errorMessage}
                             /> 
             
             </div>
@@ -91,7 +94,8 @@ const mapStateToProps = (state) => {
     return {
         ResultByQuery:(query) => searchSelectors.getResultByQuery(query)(state),
         searchResultOpen: state.ui.searchUI.searchResultOpen,
-        isLoading: state.ui.searchUI.isLoading,
+        isLoading: searchUiSelectors.getIsLoading(state),
+        errorMessage: searchUiSelectors.getErrorMessage(state),
         SearchType: searchSelectors.getSearchType(state)
     }
 }

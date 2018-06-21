@@ -10,7 +10,7 @@ function* GetArtistInfo(action){
         yield put(artistActions.GetArtistInfoSuccess(response));
     }
     else {
-        yield put(artistActions.GetArtistInfoFail(error));
+        yield put(artistActions.GetArtistInfoFail(error.message));
     }
 }
 function* GetArtistTracksAndAlbums(action){
@@ -21,13 +21,13 @@ function* GetArtistTracksAndAlbums(action){
         yield put(artistActions.GetArtistTopTracksSuccess(tracks));
     }
     else {
-        yield put(artistActions.GetArtistTopTracksFail(errorTracks));
+        yield put(artistActions.GetArtistTopTracksFail(errorTracks.message));
     }
     if(albums){
         yield put(artistActions.GetArtistTopAlbumsSuccess(albums));
     }
     else {
-        yield put(artistActions.GetArtistTopAlbumsFail(errorAlbums));
+        yield put(artistActions.GetArtistTopAlbumsFail(errorAlbums.message));
     }
 
 }

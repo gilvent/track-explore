@@ -1,19 +1,23 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {Row,Col} from 'reactstrap'
+import {Row,Col} from 'reactstrap';
 import './styles.css';
-import artistActions from '../../redux/actions/artist';
-import artistSelectors from '../../redux/selectors/entities/artists';
+import {ScaleLoader} from 'react-spinners';
+import error_icon from '../../../assets/icons/network-error-lfm.png';
 import MainHeader from '../../components/Headers/MainHeader';
+import NetworkErrorIcon from '../../components/NetworkErrorIcon';
 import BioPanel from './BioPanel';
 import TabPanel from './TabPanel';
 import SimilarPanel from './SimilarPanel';
+import artistUiSelectors from '../../redux/selectors/ui/artist';
+import artistActions from '../../redux/actions/artist';
+import artistSelectors from '../../redux/selectors/entities/artists';
 
 class ArtistPage extends Component {
     getArtistNameFromPath(){
         return this.props.match.params.artistName;
     }
-    componentWillMount(){
+    componentDidMount(){
         const name = this.getArtistNameFromPath();
         this.props.GetArtistInfo(name);
         this.props.GetArtistTracksAndAlbums(name);
@@ -26,27 +30,42 @@ class ArtistPage extends Component {
         }
     }
     render(){
-        const {ArtistInfo,SimilarArtists,TopTracks,TopAlbums} = this.props;
+        const {ArtistInfo,SimilarArtists,TopTracks,TopAlbums,isLoading} = this.props;
         const artistName = this.getArtistNameFromPath();
         const artist = ArtistInfo(artistName) ? ArtistInfo(artistName): {};
         const similarArtists = SimilarArtists(artistName);
         return (
             <div>
-            <MainHeader/>
-            <Row id="artist-container">
-                <Col md={4} id="artist-img-container">
-                    <img id="artist-img" src={artist.image} />
-                </Col>
-                <Col md={4} id="bio-container">
-                    <BioPanel data={artist} />
-                </Col>
-                <Col md={4} id="tab-container">
-                    <TabPanel topTracks={TopTracks(artistName)} topAlbums={TopAlbums(artistName)} />
-                </Col>
-                <Col md={{size:4}} id="similar-container">
-                    <SimilarPanel data={similarArtists} />
-                </Col>
-            </Row>
+                <MainHeader/>
+            {
+                isLoading && !ArtistInfo(artistName)? 
+                <Row style={{marginTop:"25vh",textAlign:"center"}}>
+                    <Col md={12}>
+                        <ScaleLoader color={"#bb0000"} loading={isLoading}/>
+                    </Col>
+                </Row>
+                : ArtistInfo(artistName) ?
+                <Row id="artist-container">
+                    <Col md={4} id="artist-img-container">
+                        <img id="artist-img" src={artist.image} />
+                    </Col>
+                    <Col md={4} id="bio-container">
+                        <BioPanel data={artist} />
+                    </Col>
+                    <Col md={4} id="tab-container">
+                        <TabPanel topTracks={TopTracks(artistName)} topAlbums={TopAlbums(artistName)} />
+                    </Col>
+                    <Col md={{size:4}} id="similar-container">
+                        {
+                            similarArtists.length!=0 &&
+                            <SimilarPanel data={similarArtists} />
+                        }
+                    </Col>
+                </Row>
+                :
+                <NetworkErrorIcon size="5em" margin="10em" text="Network Error. Try refreshing the page" textColor="white"/>
+            }
+           
             </div>
         )
     }
@@ -57,7 +76,8 @@ const mapStateToProps = (state) => {
         ArtistInfo : (name) => artistSelectors.getArtistByName(name)(state),
         SimilarArtists : (name) => artistSelectors.getSimilarArtists(name)(state),
         TopTracks : (name) => artistSelectors.getTopTracks(name)(state),
-        TopAlbums : (name) => artistSelectors.getTopAlbums(name)(state)
+        TopAlbums : (name) => artistSelectors.getTopAlbums(name)(state),
+        isLoading : artistUiSelectors.getIsLoading(state)
     }
 }
 

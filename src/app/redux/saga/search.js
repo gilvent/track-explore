@@ -12,7 +12,7 @@ function* SearchArtist(action){
         yield put(searchActions.SearchArtistSuccess(query,result));
     }
     else{
-        yield put(searchActions.SearchArtistFail());
+        yield put(searchActions.SearchArtistFail(error.message));
     }
 }
 

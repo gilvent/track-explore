@@ -18,7 +18,8 @@ class ResultDropdown extends React.Component {
     isOpen: PropTypes.bool, 
     onToggle: PropTypes.func, //handle function
     searchType: PropTypes.string,
-    isLoading: PropTypes.bool
+    isLoading: PropTypes.bool,
+    errorMessage: PropTypes.string
   }
   static defaultProps = {
     resultOpen: false, 
@@ -26,7 +27,7 @@ class ResultDropdown extends React.Component {
   }
 
   render() {
-    var {results,searchType,isOpen,onToggle,isLoading} =this.props;
+    var {results,searchType,isOpen,onToggle,isLoading,errorMessage} =this.props;
     var resultList = Object.keys(results).map(function(key){
                           const path = searchType == "Artist" ? `/artist/${results[key].name}` : 
                                        `/artist/${results[key].artist}/${searchType.toLowerCase()}/${results[key].name}`
@@ -59,7 +60,6 @@ class ResultDropdown extends React.Component {
               <Col style={{textAlign:"center"}}>
                   <ScaleLoader className="loading-overlay" color={"#bb0000"} loading={isLoading}/>
               </Col>
-              
               <div >
               {resultList}
               {
@@ -70,10 +70,11 @@ class ResultDropdown extends React.Component {
                   </a>
                 </Col>
               }
-              { (Object.keys(results).length === 0 && isLoading == false) &&
-                <Col style={{textAlign:"center",fontSize:"110%"}}>
-                  <a style={{color:'inherit',textDecoration:"none"}} href="javascript:void(0)">
-                    No result found
+              { 
+                (Object.keys(results).length === 0 && isLoading == false) &&
+                <Col style={{textAlign:"center",fontSize:"100%"}}>
+                  <a style={{color:'white',textDecoration:"none"}} href="javascript:void(0)">
+                    {errorMessage== null ? `No result found` : errorMessage}
                   </a>
                 </Col> 
               }

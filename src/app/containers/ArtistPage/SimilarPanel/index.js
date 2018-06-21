@@ -66,7 +66,7 @@ class TooltipItem extends Component{
         const {artist} = this.props;
         return (
             <Col>
-                <Row >
+                <Row>
                     <Link to={`/artist/${artist.name}`} style={{height:"100%"}}>
                         <Col className="icon-container">
                         <img style={{borderRadius:"5%"}} width="100%" height="100%" src={artist.image} id={artist.targetId}/>

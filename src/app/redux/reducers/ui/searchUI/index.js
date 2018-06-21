@@ -6,9 +6,11 @@ import {
 import {
     CLOSE_SEARCH_RESULT
 } from '../../../actions/ui';
+
 const initialState = {
     isLoading: false,
-    searchResultOpen: false
+    searchResultOpen: false,
+    errorMessage: null
 }
 
 const searchUIReducer = (state = initialState, action) => {
@@ -19,7 +21,8 @@ const searchUIReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading:true,
-                searchResultOpen:true
+                searchResultOpen:true,
+                errorMessage: null
             }
         case SEARCH_ALBUM_SUCCESS:
         case SEARCH_ARTIST_SUCCESS:
@@ -27,7 +30,8 @@ const searchUIReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading:false,
-                searchResultOpen:true
+                searchResultOpen:true,
+                errorMessage: null
             }
         case SEARCH_ALBUM_FAIL:
         case SEARCH_TRACK_FAIL:
@@ -35,7 +39,8 @@ const searchUIReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading:false,
-                searchResultOpen:true
+                searchResultOpen:true,
+                errorMessage: action.message
             }
         case CLOSE_SEARCH_RESULT:
             return {

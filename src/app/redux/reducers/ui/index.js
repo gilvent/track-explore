@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
 import searchUIReducer from './searchUI';
+import artistUIReducer from './artistUI';
 
 const uiReducers = combineReducers({
-    searchUI: searchUIReducer
+    searchUI: searchUIReducer,
+    artistUI: artistUIReducer
 });
 
 export default uiReducers;

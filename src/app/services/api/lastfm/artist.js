@@ -31,13 +31,13 @@ export const getInfo = (artist) => {
             })
 }
 
-export  const getTopTracks = async (artist) => {
+export  const getTopTracks = (artist) => {
     const params = {
         artist: artist,
         limit: 10,
         autocorrect: 1
     }
-    return await createRequest("artist.gettoptracks",params)
+    return createRequest("artist.gettoptracks",params)
             .then((res)=>{
                 const tracks = res.data.toptracks.track;
                 return {tracks}
@@ -47,13 +47,13 @@ export  const getTopTracks = async (artist) => {
             })
 }
 
-export const getTopAlbums = async (artist) => {
+export const getTopAlbums =  (artist) => {
     const params = {
         artist: artist,
         limit: 10,
         autocorrect: 1
     }
-    return await createRequest("artist.gettopalbums",params)
+    return createRequest("artist.gettopalbums",params)
             .then((res)=>{
                 const albums = res.data.topalbums.album;
                 return {albums}
