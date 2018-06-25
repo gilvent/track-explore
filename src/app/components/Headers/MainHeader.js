@@ -9,7 +9,7 @@ class MainHeader extends Component {
     render(){
         return (
             <Row className="App-header">
-                <Col md={{size:4,offset:1}}>
+                <Col md={{size:5}}>
                     <SearchBar />
                 </Col>
                 <Col md={{size:6,offset:1}}>

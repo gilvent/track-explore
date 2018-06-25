@@ -6,10 +6,11 @@ import NetworkErrorIcon from '../../../components/NetworkErrorIcon';
 
 class BioPanel extends Component {
     static propTypes ={
-        data : PropTypes.object
+        data : PropTypes.object,
+        isLoading: PropTypes.bool
     }
     render(){
-        const {data} = this.props;
+        const {data,isLoading} = this.props;
         return (
             <div>
                 <Row id="bio-title-container">
@@ -25,7 +26,7 @@ class BioPanel extends Component {
                             {data.bio_content}
                         </Col>
                     </Row> 
-                    :
+                    : !isLoading &&
                     <NetworkErrorIcon size="3em" margin="5em" text="Failed to load bio" textColor="white"/>
                 }
                 

@@ -14,11 +14,11 @@ import artistActions from '../../redux/actions/artist';
 import artistSelectors from '../../redux/selectors/entities/artists';
 
 class ArtistPage extends Component {
-    getArtistNameFromPath(){
-        return this.props.match.params.artistName;
+    getArtistNameFromPath(props){
+        return props.match.params.artistName;
     }
-    componentDidMount(){
-        const name = this.getArtistNameFromPath();
+    componentWillMount(){
+        const name = this.getArtistNameFromPath(this.props);
         this.props.GetArtistInfo(name);
         this.props.GetArtistTracksAndAlbums(name);
     }
@@ -30,8 +30,9 @@ class ArtistPage extends Component {
         }
     }
     render(){
-        const {ArtistInfo,SimilarArtists,TopTracks,TopAlbums,isLoading} = this.props;
-        const artistName = this.getArtistNameFromPath();
+        const {ArtistInfo,SimilarArtists,TopTracks,TopAlbums,
+               isLoading,isLoadingTopTracksAlbums} = this.props;
+        const artistName = this.getArtistNameFromPath(this.props);
         const artist = ArtistInfo(artistName) ? ArtistInfo(artistName): {};
         const similarArtists = SimilarArtists(artistName);
         return (
@@ -50,10 +51,11 @@ class ArtistPage extends Component {
                         <img id="artist-img" src={artist.image} />
                     </Col>
                     <Col md={4} id="bio-container">
-                        <BioPanel data={artist} />
+                        <BioPanel data={artist} isLoading={isLoading}/>
                     </Col>
                     <Col md={4} id="tab-container">
-                        <TabPanel topTracks={TopTracks(artistName)} topAlbums={TopAlbums(artistName)} />
+                        <TabPanel topTracks={TopTracks(artistName)} topAlbums={TopAlbums(artistName)} 
+                                  isLoading={isLoadingTopTracksAlbums}/>
                     </Col>
                     <Col md={{size:4}} id="similar-container">
                         {
@@ -77,7 +79,8 @@ const mapStateToProps = (state) => {
         SimilarArtists : (name) => artistSelectors.getSimilarArtists(name)(state),
         TopTracks : (name) => artistSelectors.getTopTracks(name)(state),
         TopAlbums : (name) => artistSelectors.getTopAlbums(name)(state),
-        isLoading : artistUiSelectors.getIsLoading(state)
+        isLoading : artistUiSelectors.getIsLoading(state),
+        isLoadingTopTracksAlbums : artistUiSelectors.getIsLoadingTopTracksAlbums(state)
     }
 }
 

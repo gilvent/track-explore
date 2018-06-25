@@ -19,7 +19,8 @@ export default class Example extends Component {
   }
   static propTypes = {
     topAlbums : PropTypes.array,
-    topTracks : PropTypes.array
+    topTracks : PropTypes.array,
+    isLoading : PropTypes.bool
   }
   toggle(tab) {
     if (this.state.activeTab !== tab) {
@@ -88,7 +89,7 @@ export default class Example extends Component {
             <Row>
               <Col sm="12">
                 <ListGroup className="data-list-container">
-                    {topTrackList.length!=0?topTrackList:
+                    {topTrackList.length!=0 ? topTrackList : !this.props.isLoading &&
                     <NetworkErrorIcon size="3em" margin="5em" text="Failed to load top tracks" textColor="white"/>}
                 </ListGroup>
               </Col>
@@ -98,7 +99,7 @@ export default class Example extends Component {
             <Row>
               <Col sm="12">
                 <ListGroup  className="data-list-container">
-                    {topAlbumsList.length!=0?topAlbumsList:
+                    {topAlbumsList.length!=0 ? topAlbumsList : !this.props.isLoading &&
                     <NetworkErrorIcon size="3em" margin="5em" text="Failed to load top albums" textColor="white"/>}
                 </ListGroup>
               </Col>
