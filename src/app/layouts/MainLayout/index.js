@@ -6,7 +6,7 @@ import Header from '../../components/Headers/MainHeader';
 
 class MainLayout extends Component{
     componentDidMount(){
-        console.log("main layout works")
+       
     }
     render(){
         return(

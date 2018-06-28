@@ -6,7 +6,7 @@ const initialState = {
     isLoadingTopTracksAlbums: false
 }
 
-const artistUIReducer = (state= initialState, action) => {
+const artistPageReducer = (state= initialState, action) => {
     switch(action.type){
         case GET_ARTIST_INFO:
             return {...state,isLoading:true};
@@ -24,4 +24,4 @@ const artistUIReducer = (state= initialState, action) => {
     }
 }
 
-export default artistUIReducer;
+export default artistPageReducer;

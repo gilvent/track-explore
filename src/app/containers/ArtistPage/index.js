@@ -3,13 +3,12 @@ import {connect} from 'react-redux'
 import {Row,Col} from 'reactstrap';
 import './styles.css';
 import {ScaleLoader} from 'react-spinners';
-import error_icon from '../../../assets/icons/network-error-lfm.png';
 import MainHeader from '../../components/Headers/MainHeader';
 import NetworkErrorIcon from '../../components/NetworkErrorIcon';
 import BioPanel from './BioPanel';
 import TabPanel from './TabPanel';
 import SimilarPanel from './SimilarPanel';
-import artistUiSelectors from '../../redux/selectors/ui/artist';
+import artistPageSelectors from '../../redux/selectors/ui/artistPage';
 import artistActions from '../../redux/actions/artist';
 import artistSelectors from '../../redux/selectors/entities/artists';
 
@@ -17,7 +16,7 @@ class ArtistPage extends Component {
     getArtistNameFromPath(props){
         return props.match.params.artistName;
     }
-    componentWillMount(){
+    componentDidMount(){
         const name = this.getArtistNameFromPath(this.props);
         this.props.GetArtistInfo(name);
         this.props.GetArtistTracksAndAlbums(name);
@@ -65,7 +64,7 @@ class ArtistPage extends Component {
                     </Col>
                 </Row>
                 :
-                <NetworkErrorIcon size="5em" margin="10em" text="Network Error. Try refreshing the page" textColor="white"/>
+                <NetworkErrorIcon size="5em" padding="10em" text="Network Error. Try refreshing the page" textColor="white"/>
             }
            
             </div>
@@ -79,8 +78,8 @@ const mapStateToProps = (state) => {
         SimilarArtists : (name) => artistSelectors.getSimilarArtists(name)(state),
         TopTracks : (name) => artistSelectors.getTopTracks(name)(state),
         TopAlbums : (name) => artistSelectors.getTopAlbums(name)(state),
-        isLoading : artistUiSelectors.getIsLoading(state),
-        isLoadingTopTracksAlbums : artistUiSelectors.getIsLoadingTopTracksAlbums(state)
+        isLoading : artistPageSelectors.getIsLoading(state),
+        isLoadingTopTracksAlbums : artistPageSelectors.getIsLoadingTopTracksAlbums(state)
     }
 }
 

@@ -1,7 +1,7 @@
 import {createRequest} from './helper';
 
 export const searchAlbum = (query) => {
-    let params = {
+    const params = {
         limit: 10,
         page: 1,
         album: query
@@ -14,4 +14,21 @@ export const searchAlbum = (query) => {
             .catch((error) => {
                 return {error};
             });
+}
+
+export const getInfo = async (name,artist) => {
+    const params = {
+        artist: artist,
+        album: name,
+        autocorrect: 1
+    }
+
+    return await createRequest("album.getInfo",params)
+                    .then((response)=>{
+                        const payload = response.data
+                        return {payload};
+                    })
+                    .catch((error)=>{
+                        return {error};
+                    });
 }

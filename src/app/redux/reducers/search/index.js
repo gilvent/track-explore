@@ -13,8 +13,7 @@ const initialState = {
         },
         albums:{},
         tracks:{}
-    },
-
+    }
 }
 
 const searchReducer = (state = initialState, action) => {

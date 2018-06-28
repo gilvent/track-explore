@@ -1,10 +1,11 @@
 import { GET_ARTIST_TOP_TRACKS_SUCCESS } from '../../../actions/artist';
+import { GET_ALBUM_INFO_SUCCESS } from '../../../actions/album';
 
 const initialState ={
     allIds: [],
     byId: {
-        //if no mbid, use this format No_mbid/{name}/{artist_name}
-        "mbid" : {
+        //id format = {artist}/{name}
+        "id" : {
             mbid: "",
             name: "",
             artistName: "",
@@ -20,6 +21,8 @@ const tracksReducer = (state = initialState,action) => {
     switch(action.type){
         case GET_ARTIST_TOP_TRACKS_SUCCESS:
             return addTracks(state,action.payload);
+        case GET_ALBUM_INFO_SUCCESS:
+            return addTracks(state,action.payload.tracks.track);
         default: return state
     }
 }
@@ -30,17 +33,18 @@ const addTracks = (state,payload) => {
 
     for(let i=0;i<payload.length;i++){
         const track = payload[i];
-        const key = track.mbid? track.mbid :"No_mbid/"+track.name+"/"+track.artist.name;
-        if(allIds.indexOf(key)==-1)
-            allIds.push(key);
-        byId[key] = {
-            ...byId[key],
-            mbid: track.mbid? track.mbid:"",
+        const id = track.artist.name+"/"+track.name;
+        if(allIds.indexOf(id)==-1)
+            allIds.push(id);
+        byId[id] = {
+            ...byId[id],
+            mbid: track.mbid ? track.mbid : byId[id] && byId[id].mbid ? byId[id].mbid :null,
             name: track.name,
             artistName: track.artist.name,
-            image: track.image[3]["#text"],
-            listeners: track.listeners,
-            playcount: track.playcount
+            duration: track.duration ? track.duration : byId[id] && byId[id].duration ? byId[id].duration : null, 
+            image: track.image ? track.image[3]["#text"] : byId[id] && byId[id].image ? byId[id].image : null,
+            listeners: track.listeners ? track.listeners : byId[id] && byId[id].listeners ? byId[id].listeners : null,
+            playcount: track.playcount ? track.playcount : byId[id] && byId[id].playcount ? byId[id].playcount : null
         }
     }
     return {

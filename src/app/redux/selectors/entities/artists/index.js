@@ -25,7 +25,7 @@ const getTopAlbums = (name) => createSelector(getArtistByName(name),albumSelecto
 });
 const artistSelectors = {
     getArtistState,getArtistByName,getSimilarArtists,
-    getTopTracks,getTopAlbums
+    getTopTracks,getTopAlbums,getAllArtists
 }
 
 export default artistSelectors;

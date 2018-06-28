@@ -6,7 +6,7 @@ import error_lfm from '../../../assets/icons/network-error-lfm.png';
 class NetworkErrorIcon extends Component{
     static propTypes = {
         text : PropTypes.string,
-        margin: PropTypes.string,
+        padding: PropTypes.string,
         textColor: PropTypes.string,
         size: PropTypes.string //em
     }
@@ -14,9 +14,9 @@ class NetworkErrorIcon extends Component{
         textColor: "white"
     }
     render(){
-        const {text,textColor,margin,size} = this.props;
+        const {text,textColor,padding,size} = this.props;
         return (
-            <Row style={{marginTop:margin,marginBottom:margin,textAlign:"center"}}>
+            <Row style={{paddingTop:padding,paddingBottom:padding,textAlign:"center"}}>
                 <Col sm={{size:12}} style={{height:size}}>
                     <img height="100%" src={error_lfm} />
                 </Col>

@@ -5,6 +5,7 @@ import getRootReducer from './reducers';
 
 import searchSaga from './saga/search';
 import artistSaga from './saga/artist';
+import albumSaga from './saga/album';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -15,7 +16,8 @@ const getStore = () => {
         applyMiddleware(sagaMiddleware,logger)
     );
     sagaMiddleware.run(searchSaga);
-    sagaMiddleware.run(artistSaga)
+    sagaMiddleware.run(artistSaga);
+    sagaMiddleware.run(albumSaga);
     return store;
 }
 

@@ -27,7 +27,7 @@ class BioPanel extends Component {
                         </Col>
                     </Row> 
                     : !isLoading &&
-                    <NetworkErrorIcon size="3em" margin="5em" text="Failed to load bio" textColor="white"/>
+                    <NetworkErrorIcon size="3em" padding="5em" text="Failed to load bio" textColor="white"/>
                 }
                 
                 

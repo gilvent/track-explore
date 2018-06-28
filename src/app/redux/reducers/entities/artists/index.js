@@ -64,7 +64,7 @@ const addArtistTopTracks = (state,payload) => {
     const artistName = payload[0].artist.name;
     byName[artistName] ={
         ...byName[artistName],
-        topTracks : payload.map((track)=>track.mbid? track.mbid: "No_mbid/"+track.name+"/"+track.artist.name) 
+        topTracks : payload.map((track)=>track.artist.name+"/"+track.name) 
     }
     return {...state, byName}
 }

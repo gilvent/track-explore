@@ -90,7 +90,7 @@ export default class Example extends Component {
               <Col sm="12">
                 <ListGroup className="data-list-container">
                     {topTrackList.length!=0 ? topTrackList : !this.props.isLoading &&
-                    <NetworkErrorIcon size="3em" margin="5em" text="Failed to load top tracks" textColor="white"/>}
+                    <NetworkErrorIcon size="3em" padding="5em" text="Failed to load top tracks" textColor="white"/>}
                 </ListGroup>
               </Col>
             </Row>
@@ -100,7 +100,7 @@ export default class Example extends Component {
               <Col sm="12">
                 <ListGroup  className="data-list-container">
                     {topAlbumsList.length!=0 ? topAlbumsList : !this.props.isLoading &&
-                    <NetworkErrorIcon size="3em" margin="5em" text="Failed to load top albums" textColor="white"/>}
+                    <NetworkErrorIcon size="3em" padding="5em" text="Failed to load top albums" textColor="white"/>}
                 </ListGroup>
               </Col>
             </Row>
