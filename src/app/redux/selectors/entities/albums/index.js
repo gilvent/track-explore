@@ -12,7 +12,7 @@ const getAlbumById = (name,artist) => createSelector(getById,(byId)=>{
 })
 
 const getAlbumTracks = (name,artist) => createSelector(getAlbumById(name,artist),trackSelectors.getById,
-    (album,tracks)=> album.tracks? album.tracks.map((trackId)=>tracks[trackId]) : []
+    (album,tracks)=> album && album.tracks? album.tracks.map((trackId)=>tracks[trackId]) : []
 )
 const albumSelectors = {
     getAlbumState,getAllIds,getById, getAlbumById, getAlbumTracks

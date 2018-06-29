@@ -26,11 +26,11 @@ class InfoPanel extends Component {
                     </Col>
                 </Row>
                 <Row style={{color:"#bb0000",paddingTop:"1em"}}>
-                    <Col>
-                        <Button className="album-buttons">{albumData.listeners} <br/> Listeners</Button>
+                    <Col xs={6}>
+                        <div className="album-buttons">{albumData.listeners} <br/> Listeners</div>
                     </Col>
-                    <Col>
-                        <Button className="album-buttons">{albumData.playcount} <br/> Play Count</Button>
+                    <Col xs={6}>
+                        <div className="album-buttons">{albumData.playcount} <br/> Play Count</div>
                     </Col>
                 </Row>
                 {

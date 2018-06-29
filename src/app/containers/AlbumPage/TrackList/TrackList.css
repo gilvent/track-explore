@@ -1,0 +1,35 @@
+.album-tracks-list{
+    background-color: rgba(0,0,0,0.3);
+    cursor:pointer
+}
+.album-track-link :hover{
+    color:#bb0000;
+}
+.album-track-link {
+    color:inherit;
+}
+#album-tracks-container{
+    height:20em;
+    overflow-y:auto;
+    overflow-x: hidden;
+    color:#dee2e6;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+#album-tracks-container::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.3);
+}
+
+#album-tracks-container::-webkit-scrollbar
+{
+	width: 6px;
+    background-color: rgba(0,0,0,0.3);
+}
+
+#album-tracks-container::-webkit-scrollbar-thumb
+{
+	background-color: #bb0000;
+}

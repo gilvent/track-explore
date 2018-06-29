@@ -29,40 +29,46 @@ export default class Example extends Component {
       });
     }
   }
+  renderTopTracksList(){
+    return this.props.topTracks.map((track)=>{
+        const linkPath = "/artist/"+track.artistName+"/track/"+track.name;
+        return (
+          <Link to={linkPath} style={{color:"inherit",textDecoration:"none"}}>
+          <ListGroupItem tag="button" action className="data-list">
+              <Row >
+                  <Col className="data-text-container">
+                    {track.name}
+                  </Col>
+              </Row>
+          </ListGroupItem>
+          </Link>
+        )
+    })
+  }
+  renderTopAlbumsList(){
+    return this.props.topAlbums.map((album)=> {
+        const linkPath = "/artist/"+album.artistName+"/album/"+album.name;
+        return (
+          <Link to={linkPath} style={{color:"inherit",textDecoration:"none"}}>
+          <ListGroupItem tag="button" action className="data-list">
+              <Row >
+                  <Col xs={2} className="data-img-container">
+                  <Row>
+                      <img height="90%" width="90%" src={album.image} />
+                  </Row>
+                  </Col>
+                  <Col>
+                    <Row className="data-text-container">{album.name}</Row>
+                  </Col>
+              </Row>
+          </ListGroupItem>
+          </Link>
+        )
+    })
+  }
   render() {
-    const topTrackList = this.props.topTracks.map((track)=>{
-      const linkPath = "/artist/"+track.artistName+"/track/"+track.name;
-      return (
-        <Link to={linkPath} style={{color:"inherit",textDecoration:"none"}}>
-        <ListGroupItem tag="button" action className="data-list">
-            <Row >
-                <Col className="data-text-container">
-                  {track.name}
-                </Col>
-            </Row>
-        </ListGroupItem>
-        </Link>
-      )
-    });
-    const topAlbumsList = this.props.topAlbums.map((album)=> {
-      const linkPath = "/artist/"+album.artistName+"/album/"+album.name;
-      return (
-        <Link to={linkPath} style={{color:"inherit",textDecoration:"none"}}>
-        <ListGroupItem tag="button" action className="data-list">
-            <Row >
-                <Col xs={2} className="data-img-container">
-                <Row>
-                    <img height="90%" width="90%" src={album.image} />
-                </Row>
-                </Col>
-                <Col>
-                  <Row className="data-text-container">{album.name}</Row>
-                </Col>
-            </Row>
-        </ListGroupItem>
-        </Link>
-      )
-    });
+    const topTrackList = this.renderTopTracksList();
+    const topAlbumsList = this.renderTopAlbumsList();
 
     return (
       <div>

@@ -31,7 +31,7 @@ const addAlbumEntry = (state,payload)=>{
     const allIds = state.allIds;
     const byId = state.byId;
     const album = payload;
-    const key = album.mbid?album.mbid:"No_mbid/"+album.name+"/"+album.artist.name;
+    const key = album.mbid?album.mbid:"No_mbid/"+album.name+"/"+album.artist;
     if(allIds.indexOf(key)==-1) 
         allIds.push(key);
     byId[key] = {
@@ -39,8 +39,8 @@ const addAlbumEntry = (state,payload)=>{
         mbid: album.mbid?album.mbid:"",
         name: album.name,
         image: album.image[3]["#text"],
-        playcount: album.playcount,
-        listeners: album.listeners,
+        playcount: album.playcount ? album.playcount : "-",
+        listeners: album.listeners ? album.listeners : "-",
         artistName: album.artist,
         summary : album.wiki? album.wiki.summary : "",
         tracks : album.tracks.track.map((track)=>album.artist+"/"+track.name)
@@ -63,7 +63,7 @@ const addAlbums = (state,payload) => {
                 mbid: album.mbid?album.mbid:"",
                 name: album.name,
                 image: album.image[3]["#text"],
-                playcount: album.playcount,
+                playcount: album.playcount ? album.playcount : "-",
                 artistName: album.artist.name
             }
     }

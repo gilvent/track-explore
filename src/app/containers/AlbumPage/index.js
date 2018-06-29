@@ -9,6 +9,7 @@ import albumActions from '../../redux/actions/album';
 import albumSelectors from '../../redux/selectors/entities/albums';
 import './AlbumPage.css';
 import albumPageSelectors from '../../redux/selectors/ui/albumPage';
+import TrackList from './TrackList';
 
 
 class AlbumPage extends Component{
@@ -31,6 +32,8 @@ class AlbumPage extends Component{
     render(){
         const params = this.getUrlParams(this.props);
         const album = this.props.AlbumById(params.albumName,params.artistName);
+        const albumTracks = this.props.AlbumTracks(params.albumName,params.artistName);
+ 
         return (
             <div>
                 <MainHeader/>
@@ -43,11 +46,14 @@ class AlbumPage extends Component{
                     </Row>
                     : album ?
                     <Row id="album-container">
-                        <Col md={4} id="album-img-container">
+                        <Col md={4} id="album-img-container" style={{marginBottom:"1em"}}>
                             <img id="album-img" src={album.image} />
                         </Col>
-                        <Col md={4}>
+                        <Col md={4} style={{marginBottom:"1em"}}>
                             <InfoPanel isFetching={this.props.isFetching} albumData={album}/>
+                        </Col>
+                        <Col md={4} style={{marginBottom:"1em"}}>
+                            <TrackList isFetching={this.props.isFetching} data={albumTracks}/>
                         </Col>
                     </Row>
                     :
@@ -63,6 +69,7 @@ class AlbumPage extends Component{
 const mapStateToProps = (state) => {
     return {
         AlbumById : (name,artist) => albumSelectors.getAlbumById(name,artist)(state),
+        AlbumTracks : (name,artist) => albumSelectors.getAlbumTracks(name,artist)(state),
         isFetching : albumPageSelectors.getIsFetching(state),
         errorMessage : albumPageSelectors.getErrorMessage(state)
     }
@@ -70,7 +77,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        GetAlbumInfo : (name,artist) => dispatch(albumActions.GetAlbumInfo(name,artist))
+        GetAlbumInfo : (name,artist) => dispatch(albumActions.GetAlbumInfo(name,artist)),
+
     }
 }
 
