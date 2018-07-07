@@ -1,0 +1,50 @@
+#tabs-container{
+    border-bottom: 1px solid #dee2e6;
+    color:white
+}
+
+.tabs-item .nav-link.active{
+    color: white;
+    background-color: #bb0000;
+    border-color: #bb0000 #bb0000 #dee2e6;
+}
+
+.tabs-item .nav-link:hover {
+    border-color: #e9ecef #e9ecef #dee2e6;
+    cursor: pointer;
+}
+
+.track-tab-container {
+    margin-top:1%;
+	height:25em;
+	overflow:auto;
+	overflow-x:hidden;
+    text-align:left;
+    font-size:90%
+}
+#track-wiki-tab-container {
+    box-shadow: 0 4px 8px 0 rgba(221, 12, 12, 0.2), 0 3px 20px 0 rgba(231, 0, 0, 0.945);
+    padding:3%;
+}
+#track-lyric-tab-container {
+    box-shadow: 0 4px 8px 0 rgba(221, 12, 12, 0.2), 0 3px 20px 0 #fd583c;
+    padding:3%;
+}
+#track-wiki-tab-container::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.3);
+}
+
+#track-wiki-tab-container::-webkit-scrollbar
+{
+	width: 6px;
+    background-color: rgba(0,0,0,0.3);
+}
+
+#track-wiki-tab-container::-webkit-scrollbar-thumb
+{
+	background-color: #bb0000;
+}
+
+

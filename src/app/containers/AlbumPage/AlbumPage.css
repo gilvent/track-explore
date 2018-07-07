@@ -1,6 +1,6 @@
 #album-container {
     text-align:center;
-    padding-top:5%;
+    padding-top:2%;
 }
 
 #album-img-container {
@@ -13,4 +13,9 @@
     width:100%;
     height:100%;
     border-radius:2%
+}
+
+#album-title-container{
+    text-align: center;
+    padding-top:2%
 }

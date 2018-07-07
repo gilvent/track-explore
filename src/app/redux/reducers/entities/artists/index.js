@@ -1,6 +1,7 @@
 import { 
     GET_ARTIST_INFO_SUCCESS,GET_ARTIST_TOP_TRACKS_SUCCESS,GET_ARTIST_TOP_ALBUMS_SUCCESS 
 } from "../../../actions/artist";
+import { GET_TRACK_INFO_SUCCESS } from "../../../actions/track";
 
 const initialState ={
     allNames: [],
@@ -26,6 +27,19 @@ const artistsReducer = (state = initialState,action) => {
             return addArtistTopTracks(state,action.payload);
         case GET_ARTIST_TOP_ALBUMS_SUCCESS:
             return addArtistTopAlbums(state,action.payload);
+        case GET_TRACK_INFO_SUCCESS:
+            const artist = action.payload.artist;
+            const id = artist.name;
+            if(state.allNames.indexOf(id)==-1) state.allNames.push(id);
+            state.byName[id] = {
+                ...state.byName[id],
+                mbid: artist.mbid?artist.mbid: "",
+                name: artist.name
+            }
+            return {
+                allNames: state.allNames,
+                byName: {...state.byName}
+            }
         default: return state
     }
 }
@@ -73,7 +87,7 @@ const addArtistTopAlbums = (state,payload) => {
     const artistName = payload[0].artist.name;
     byName[artistName] ={
         ...byName[artistName],
-        topAlbums : payload.map((album)=>album.mbid? album.mbid: "No_mbid/"+album.name+"/"+album.artist.name) 
+        topAlbums : payload.map((album)=>album.artist.name+"/"+album.name) 
     }
     return {...state, byName}
 }

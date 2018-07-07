@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Row,Col} from 'reactstrap'
 import {ScaleLoader} from 'react-spinners';
 import MainHeader from '../../components/Headers/MainHeader';
+import {Link} from 'react-router-dom';
 import NetworkErrorIcon from '../../components/NetworkErrorIcon';
 import InfoPanel from './InfoPanel';
 import albumActions from '../../redux/actions/album';
@@ -31,9 +32,8 @@ class AlbumPage extends Component{
     }
     render(){
         const params = this.getUrlParams(this.props);
-        const album = this.props.AlbumById(params.albumName,params.artistName);
+        const album = this.props.Album(params.albumName,params.artistName);
         const albumTracks = this.props.AlbumTracks(params.albumName,params.artistName);
- 
         return (
             <div>
                 <MainHeader/>
@@ -45,6 +45,17 @@ class AlbumPage extends Component{
                         </Col>
                     </Row>
                     : album ?
+                    <div>
+                    <Row id="album-title-container">
+                        <Col sm={12}>
+                            <h2 style={{color:"#FFFFFF"}}>{album.name}</h2>
+                        </Col>
+                        <Col sm={12} style={{color:"#bb0000"}}>
+                            <span style={{color:"#FFF",fontStyle:"italic"}}>album by </span>
+                            <Link style={{color:"inherit"}} 
+                                to={`/artist/${album.artistName}`}><span>{album.artistName}</span></Link>
+                        </Col>
+                    </Row>
                     <Row id="album-container">
                         <Col md={4} id="album-img-container" style={{marginBottom:"1em"}}>
                             <img id="album-img" src={album.image} />
@@ -56,6 +67,7 @@ class AlbumPage extends Component{
                             <TrackList isFetching={this.props.isFetching} data={albumTracks}/>
                         </Col>
                     </Row>
+                    </div>
                     :
                     <NetworkErrorIcon size="5em" padding="10em" 
                         text={this.props.errorMessage?this.props.errorMessage:"Network Error. Try refreshing the page"} textColor="white"/>
@@ -68,7 +80,7 @@ class AlbumPage extends Component{
 
 const mapStateToProps = (state) => {
     return {
-        AlbumById : (name,artist) => albumSelectors.getAlbumById(name,artist)(state),
+        Album : (name,artist) => albumSelectors.getAlbumByNameAndArtist(name,artist)(state),
         AlbumTracks : (name,artist) => albumSelectors.getAlbumTracks(name,artist)(state),
         isFetching : albumPageSelectors.getIsFetching(state),
         errorMessage : albumPageSelectors.getErrorMessage(state)

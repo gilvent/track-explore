@@ -1,14 +1,13 @@
-.album-tracks-list{
+.similar-track-link :hover {
+    color: #bb0000;
+}
+
+.similar-tracks-list{
     background-color: rgba(0,0,0,0.3);
     cursor:pointer
 }
-.album-track-link :hover{
-    color:#bb0000;
-}
-.album-track-link {
-    color:inherit;
-}
-#album-tracks-container{
+
+#similar-tracks-container{
     height:19em;
     overflow-y:auto;
     overflow-x: hidden;
@@ -17,19 +16,19 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
-#album-tracks-container::-webkit-scrollbar-track
+#similar-tracks-container::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	background-color: rgba(0,0,0,0.3);
 }
 
-#album-tracks-container::-webkit-scrollbar
+#similar-tracks-container::-webkit-scrollbar
 {
 	width: 6px;
     background-color: rgba(0,0,0,0.3);
 }
 
-#album-tracks-container::-webkit-scrollbar-thumb
+#similar-tracks-container::-webkit-scrollbar-thumb
 {
 	background-color: #bb0000;
 }

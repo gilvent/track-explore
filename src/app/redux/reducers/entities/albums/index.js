@@ -1,11 +1,12 @@
 import {GET_ARTIST_TOP_ALBUMS_SUCCESS} from '../../../actions/artist';
 import {GET_ALBUM_INFO_SUCCESS } from '../../../actions/album';
+import { GET_TRACK_INFO_SUCCESS } from '../../../actions/track';
 
 const initialState ={
     allIds: [],
     byId: {
-        //if no mbid, use this format No_mbid/{album_name}/{artist_name}
-        "mbid" : {
+        "id" : {
+            id: "artist_name/album_name",
             mbid: "",
             name: "",
             image: "",
@@ -22,7 +23,22 @@ const albumsReducer = (state = initialState,action) => {
         case GET_ARTIST_TOP_ALBUMS_SUCCESS:
             return addAlbums(state,action.payload);
         case GET_ALBUM_INFO_SUCCESS:
-            return addAlbumEntry(state,action.payload)
+            return addAlbumEntry(state,action.payload);
+        case GET_TRACK_INFO_SUCCESS:
+            const album = action.payload.album;
+            const id = album.artist+"/"+album.title;
+            if(state.allIds.indexOf(id)==-1) state.allIds.push(id);
+            state.byId[id] = {
+                ...state.byId[id],
+                id: id,
+                mbid: album.mbid?album.mbid: "",
+                image: album.image[3]["#text"],
+                name: album.title
+            }
+            return {
+                allIds: state.allIds,
+                byId: {...state.byId}
+            }
         default: return state
     }
 }
@@ -31,11 +47,12 @@ const addAlbumEntry = (state,payload)=>{
     const allIds = state.allIds;
     const byId = state.byId;
     const album = payload;
-    const key = album.mbid?album.mbid:"No_mbid/"+album.name+"/"+album.artist;
-    if(allIds.indexOf(key)==-1) 
-        allIds.push(key);
-    byId[key] = {
-        ...byId[key],
+    const id = album.artist+"/"+album.name;
+    if(allIds.indexOf(id)==-1) 
+        allIds.push(id);
+    byId[id] = {
+        ...byId[id],
+        id: id,
         mbid: album.mbid?album.mbid:"",
         name: album.name,
         image: album.image[3]["#text"],
@@ -55,11 +72,12 @@ const addAlbums = (state,payload) => {
 
     for(let i=0;i<payload.length;i++){
         const album = payload[i];
-        const key = album.mbid? album.mbid :"No_mbid/"+album.name+"/"+album.artist.name;
-            if(allIds.indexOf(key)==-1) 
-                allIds.push(key);
-            byId[key] = {
-                ...byId[key],
+        const id = album.artist.name+"/"+album.name;
+            if(allIds.indexOf(id)==-1) 
+                allIds.push(id);
+            byId[id] = {
+                ...byId[id],
+                id: id,
                 mbid: album.mbid?album.mbid:"",
                 name: album.name,
                 image: album.image[3]["#text"],

@@ -1,0 +1,17 @@
+.listeners-playcount-buttons {
+    background-color: #000;
+    border-color:#bb0000;
+    color:#FFF;
+    border-style:solid;
+    padding:1%; 
+    font-size:90%;
+    width:11em;
+    font-family:verdana;
+    border-radius:1em;
+    cursor:pointer;
+    text-align: center
+}
+.listeners-playcount-buttons :hover .album-buttons{ 
+    background-color:#bb0000 !important;
+    border-color:#bb0000;
+}

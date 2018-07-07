@@ -6,7 +6,7 @@ import getRootReducer from './reducers';
 import searchSaga from './saga/search';
 import artistSaga from './saga/artist';
 import albumSaga from './saga/album';
-
+import trackSaga from './saga/track';
 const sagaMiddleware = createSagaMiddleware();
 
 const getStore = () => {
@@ -18,6 +18,7 @@ const getStore = () => {
     sagaMiddleware.run(searchSaga);
     sagaMiddleware.run(artistSaga);
     sagaMiddleware.run(albumSaga);
+    sagaMiddleware.run(trackSaga);
     return store;
 }
 

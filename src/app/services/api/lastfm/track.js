@@ -1,4 +1,5 @@
 import {createRequest} from './helper';
+
 export const searchTrack = (query) => {
     let params = {
         limit: 10,
@@ -13,4 +14,40 @@ export const searchTrack = (query) => {
             .catch((error) => {
                 return {error};
             });
+}
+
+
+export const getInfo = async (name,artist) => {
+    const params = {
+        artist: artist,
+        track: name,
+        autocorrect: 1
+    }
+
+    return await createRequest("track.getInfo",params)
+                    .then((response)=>{
+                        const payload = response.data
+                        return {payload};
+                    })
+                    .catch((error)=>{
+                        return {error};
+                    });
+}
+
+export const getSimilar = async (name,artist) => {
+    const params = {
+        artist: artist,
+        track: name,
+        autocorrect: 1,
+        limit: 5
+    }
+
+    return await createRequest("track.getSimilar",params)
+                    .then((response)=>{
+                        const payload = response.data
+                        return {payload};
+                    })
+                    .catch((error)=>{
+                        return {error};
+                    });
 }

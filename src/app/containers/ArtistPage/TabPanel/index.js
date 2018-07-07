@@ -69,7 +69,7 @@ export default class Example extends Component {
   render() {
     const topTrackList = this.renderTopTracksList();
     const topAlbumsList = this.renderTopAlbumsList();
-
+    
     return (
       <div>
         <Nav tabs id="tabs-container">

@@ -7,7 +7,7 @@ import MainHeader from '../../components/Headers/MainHeader';
 import NetworkErrorIcon from '../../components/NetworkErrorIcon';
 import BioPanel from './BioPanel';
 import TabPanel from './TabPanel';
-import SimilarPanel from './SimilarPanel';
+import SimilarArtistsList from './SimilarArtistsList';
 import artistPageSelectors from '../../redux/selectors/ui/artistPage';
 import artistActions from '../../redux/actions/artist';
 import artistSelectors from '../../redux/selectors/entities/artists';
@@ -17,6 +17,7 @@ class ArtistPage extends Component {
         return props.match.params.artistName;
     }
     componentDidMount(){
+        console.log("mount")
         const name = this.getArtistNameFromPath(this.props);
         this.props.GetArtistInfo(name);
         this.props.GetArtistTracksAndAlbums(name);
@@ -24,6 +25,7 @@ class ArtistPage extends Component {
     componentWillReceiveProps(nextProps){
         if(this.props.location !== nextProps.location){
             const name = this.getArtistNameFromPath(nextProps);
+            console.log(nextProps)
             this.props.GetArtistInfo(name);
             this.props.GetArtistTracksAndAlbums(name);
         }
@@ -59,7 +61,7 @@ class ArtistPage extends Component {
                     <Col md={{size:4}} id="similar-container">
                         {
                             similarArtists.length!=0 &&
-                            <SimilarPanel data={similarArtists} />
+                            <SimilarArtistsList data={similarArtists} />
                         }
                     </Col>
                 </Row>

@@ -3,7 +3,8 @@ import {Row,Col,Tooltip} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import {PropTypes} from 'prop-types'
 import './SimilarPanel.css'
-class SimilarPanel extends Component {
+
+class SimilarArtistsList extends Component {
     constructor(props){
         super(props);
         this.toggle = this.toggle.bind(this);
@@ -84,4 +85,4 @@ class TooltipItem extends Component{
 
 
 
-export default SimilarPanel
+export default SimilarArtistsList

@@ -16,7 +16,7 @@ export default class TrackList extends Component {
       return this.props.data.map((track)=>{
             return (
                 <Link className="album-track-link" style={{textDecoration:"none"}}
-                      to={`/artist/${track.artistName}/track/${track.name}/`} >
+                      to={`/artist/${track.artistName}/track/${track.name}`} >
                     <ListGroupItem className="album-tracks-list">{track.name}</ListGroupItem>
                 </Link>
             )
