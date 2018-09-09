@@ -14,16 +14,16 @@ Main functionality of this app is to search for music artists, albums, songs and
 3. Run the app in development mode `npm start`
 4. Open http://localhost:3000 to view it in the browser. 
 
-## Built with 
-[NPM](https://www.npmjs.com/) - Package manager <br>
-[Redux](https://redux.js.org/) - State management <br>
-[Redux Saga](https://github.com/redux-saga/redux-saga) - Redux middleware <br>
-[React Router](https://github.com/ReactTraining/react-router) - Routing <br>
-[Reactstrap](https://reactstrap.github.io/) - Bootstrap styling for React <br>
+## Stack
+* [React](https://reactjs.org/) - SPA framework
+* [Redux](https://redux.js.org/) - State management
+    * [Redux Saga](https://github.com/redux-saga/redux-saga) - Redux middleware
+    * [Reselect](https://github.com/reduxjs/reselect) - Redux selector
+* [Reactstrap](https://reactstrap.github.io/) - Bootstrap styling for React
 
 
 ## APIs
-[Last fm](https://www.last.fm/api)
+* [Last fm](https://www.last.fm/api)
 
 ## Misc
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
