@@ -1,10 +1,12 @@
-import React, {Component} from 'react';
-import {PropTypes} from 'prop-types';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 import { ListGroup, ListGroupItem, Row, Col } from 'reactstrap';
-import {ScaleLoader} from 'react-spinners';
-import {Link} from 'react-router-dom';
+import { ScaleLoader } from 'react-spinners';
+import { Link } from 'react-router-dom';
+
+import NetworkErrorIcon from 'app/components/NetworkErrorIcon';
+
 import './TrackList.css';
-import NetworkErrorIcon from '../../../components/NetworkErrorIcon';
 
 export default class TrackList extends Component {
   static propTypes = {

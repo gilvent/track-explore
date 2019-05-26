@@ -1,5 +1,5 @@
 import {GET_TRACK_INFO,GET_TRACK_INFO_SUCCESS,GET_TRACK_INFO_FAIL, 
-    GET_SIMILAR_TRACKS, GET_SIMILAR_TRACKS_SUCCESS, GET_SIMILAR_TRACKS_FAIL} from '../../../actions/track';
+    GET_SIMILAR_TRACKS, GET_SIMILAR_TRACKS_SUCCESS, GET_SIMILAR_TRACKS_FAIL} from 'app/redux/actions/track';
 
 const initialState = {
     isFetchingTrack : false,

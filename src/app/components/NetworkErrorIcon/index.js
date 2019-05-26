@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {Row,Col} from 'reactstrap';
-import {PropTypes} from 'prop-types';
-import error_lfm from '../../../assets/icons/network-error-lfm.png';
-import error_mxm from '../../../assets/icons/network-error-mxm.png';
+import React, { Component } from 'react';
+import { Row,Col } from 'reactstrap';
+import { PropTypes } from 'prop-types';
+import error_lfm from 'assets/icons/network-error-lfm.png';
+import error_mxm from 'assets/icons/network-error-mxm.png';
 
 class NetworkErrorIcon extends Component{
     static propTypes = {

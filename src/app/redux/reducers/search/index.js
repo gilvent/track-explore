@@ -1,7 +1,7 @@
 import {
     SEARCH_ALBUM_SUCCESS,SEARCH_ARTIST_SUCCESS,SEARCH_TRACK_FAIL, SEARCH_TRACK_SUCCESS
-} from '../../actions/search';
-import { SELECT_SEARCH_TYPE } from '../../actions/ui';
+} from 'app/redux/actions/search';
+import { SELECT_SEARCH_TYPE } from 'app/redux/actions/ui';
 
 const initialState = {
     type: "Artist",

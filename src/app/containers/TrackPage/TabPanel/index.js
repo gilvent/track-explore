@@ -4,9 +4,11 @@ import {
 } from 'reactstrap';
 import {PropTypes} from 'prop-types';
 import classnames from 'classnames';
+
+import NetworkErrorIcon from 'app/components/NetworkErrorIcon';
+
 import './TabPanel.css';
-import {MUSIXMATCH_PRIMARY} from '../../../shared/colors';
-import NetworkErrorIcon from '../../../components/NetworkErrorIcon';
+
 
 export default class Example extends Component {
   constructor(props) {

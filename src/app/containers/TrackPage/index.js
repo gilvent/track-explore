@@ -3,17 +3,20 @@ import {connect} from 'react-redux'
 import {Row,Col} from 'reactstrap';
 import {ScaleLoader} from 'react-spinners';
 import {Link} from 'react-router-dom';
-import MainHeader from '../../components/Headers/MainHeader';
-import NetworkErrorIcon from '../../components/NetworkErrorIcon';
+
+import MainHeader from 'app/components/Headers/MainHeader';
+import NetworkErrorIcon from 'app/components/NetworkErrorIcon';
+import trackActions from 'app/redux/actions/track';
+import trackSelectors from 'app/redux/selectors/entities/tracks';
+import trackPageSelectors from 'app/redux/selectors/ui/trackPage';
+import albumSelectors from 'app/redux/selectors/entities/albums';
+import artistSelectors from 'app/redux/selectors/entities/artists';
+
 import TrackInfo from './TrackInfo';
 import TabPanel from './TabPanel';
-import trackActions from '../../redux/actions/track';
-import trackSelectors from '../../redux/selectors/entities/tracks';
-import trackPageSelectors from '../../redux/selectors/ui/trackPage';
-import albumSelectors from '../../redux/selectors/entities/albums';
-import artistSelectors from '../../redux/selectors/entities/artists';
-import './TrackPage.css';
 import SimilarTracksList from './SimilarTracksList';
+import './TrackPage.css';
+
 
 class TrackPage extends Component{
     getUrlParams(props){

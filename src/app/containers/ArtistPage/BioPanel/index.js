@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {Row,Col} from 'reactstrap';
-import {PropTypes} from 'prop-types'
+import {PropTypes} from 'prop-types';
+
+import NetworkErrorIcon from 'app/components/NetworkErrorIcon';
+
 import './BioPanel.css';
-import NetworkErrorIcon from '../../../components/NetworkErrorIcon';
 
 class BioPanel extends Component {
     static propTypes ={

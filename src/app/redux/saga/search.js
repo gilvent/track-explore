@@ -1,8 +1,9 @@
 import {fork,call,put,take} from 'redux-saga/effects';
-import {searchArtist} from '../../services/api/lastfm/artist';
-import {searchAlbum} from '../../services/api/lastfm/album';
-import {searchTrack} from '../../services/api/lastfm/track';
-import searchActions,{SEARCH_ARTIST, SEARCH_ALBUM, SEARCH_TRACK} from '../actions/search'
+
+import {searchArtist} from 'app/services/api/lastfm/artist';
+import {searchAlbum} from 'app/services/api/lastfm/album';
+import {searchTrack} from 'app/services/api/lastfm/track';
+import searchActions,{SEARCH_ARTIST, SEARCH_ALBUM, SEARCH_TRACK} from 'app/redux/actions/search'
 
 function* SearchArtist(action){
     const {query} = action;

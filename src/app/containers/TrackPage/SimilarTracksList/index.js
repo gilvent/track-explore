@@ -3,8 +3,11 @@ import {PropTypes} from 'prop-types';
 import { ListGroup, ListGroupItem, Row, Col } from 'reactstrap';
 import {ScaleLoader} from 'react-spinners';
 import {Link} from 'react-router-dom';
+
+import NetworkErrorIcon from 'app/components/NetworkErrorIcon';
+
 import './SimilarTracksList.css';
-import NetworkErrorIcon from '../../../components/NetworkErrorIcon';
+
 
 export default class SimilarTracksList extends Component {
   static propTypes = {

@@ -1,10 +1,11 @@
 import React from 'react';
 import {Route} from 'react-router';
-import HomePage from './containers/HomePage';
-import ChartsPage from './containers/ChartsPage';
-import ArtistPage from './containers/ArtistPage';
-import AlbumPage from './containers/AlbumPage';
-import TrackPage from './containers/TrackPage';
+
+import HomePage from 'app/containers/HomePage';
+import ChartsPage from 'app/containers/ChartsPage';
+import ArtistPage from 'app/containers/ArtistPage';
+import AlbumPage from 'app/containers/AlbumPage';
+import TrackPage from 'app/containers/TrackPage';
 
 export const MainRoutes = () => {
     return (

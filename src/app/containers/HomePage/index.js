@@ -1,12 +1,13 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {Row,Col,Button} from 'reactstrap';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Row,Col,Button } from 'reactstrap';
+
+import HeaderNoSearch from 'app/components/Headers/HeaderNoSearch';
+import SearchBar from 'app/containers/SearchBar';
+import { LASTFM_PRIMARY,LASTFM_SECONDARY, MUSIXMATCH_PRIMARY, MUSIXMATCH_SECONDARY} from 'app/shared/colors';
+
+import { AnimatedLogo } from './AnimatedLogo';
 import './styles.css';
-import {AnimatedLogo} from './AnimatedLogo';
-import HeaderNoSearch from '../../components/Headers/HeaderNoSearch';
-import SearchBar from '../../containers/SearchBar';
-import {LASTFM_PRIMARY,LASTFM_SECONDARY, MUSIXMATCH_PRIMARY, MUSIXMATCH_SECONDARY} from '../../shared/colors';
 
 class HomePage extends Component{
     constructor(props) {

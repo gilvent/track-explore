@@ -1,6 +1,7 @@
 import { fork,call,take,put} from 'redux-saga/effects';
-import albumActions, { GET_ALBUM_INFO } from '../actions/album';
-import {getInfo} from '../../services/api/lastfm/album';
+
+import albumActions, { GET_ALBUM_INFO } from 'app/redux/actions/album';
+import { getInfo } from 'app/services/api/lastfm/album';
 
 function* GetAlbumInfo(action){
     const {name,artist} = action;

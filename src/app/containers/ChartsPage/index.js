@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Row, Col } from 'reactstrap';
-import HeaderNoSearch from '../../components/Headers/HeaderNoSearch';
+
+import HeaderNoSearch from 'app/components/Headers/HeaderNoSearch';
+
 class ChartsPage extends Component{
     componentDidMount(){
     }

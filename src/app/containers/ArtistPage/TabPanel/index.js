@@ -1,15 +1,18 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { 
-  TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col,
+  TabContent, TabPane, Nav, NavItem, NavLink, Row, Col,
   ListGroup, ListGroupItem
 } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import {PropTypes} from 'prop-types';
 import classnames from 'classnames';
-import './styles.css';
-import NetworkErrorIcon from '../../../components/NetworkErrorIcon';
 
-export default class Example extends Component {
+import NetworkErrorIcon from 'app/components/NetworkErrorIcon';
+
+import './styles.css';
+
+
+export default class TabPanel extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);

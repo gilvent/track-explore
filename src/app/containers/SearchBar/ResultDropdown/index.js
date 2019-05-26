@@ -1,13 +1,13 @@
 import React from 'react';
 import { 
-  Dropdown, DropdownMenu, DropdownToggle, Input, DropdownItem,
+  Dropdown, DropdownMenu, DropdownToggle, DropdownItem,
   Row,Col
 } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import {ScaleLoader} from 'react-spinners';
 import PropTypes from 'prop-types';
+
 import './styles.css';
-import logo from '../../../../assets/musixmatch-logo.png';
 
 class ResultDropdown extends React.Component {
   constructor(props) {

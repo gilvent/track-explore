@@ -1,6 +1,6 @@
 import { fork,call,take,put} from 'redux-saga/effects';
-import trackActions, { GET_TRACK_INFO, GET_SIMILAR_TRACKS } from '../actions/track';
-import {getInfo, getSimilar} from '../../services/api/lastfm/track';
+import trackActions, { GET_TRACK_INFO, GET_SIMILAR_TRACKS } from 'app/redux/actions/track';
+import {getInfo, getSimilar} from 'app/services/api/lastfm/track';
 
 function* GetTrackInfo(action){
     const {name,artist} = action;

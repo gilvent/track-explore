@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import {Redirect} from 'react-router';
 import {Link} from 'react-router-dom';
-import { Nav, NavItem,NavLink, Row, Col } from 'reactstrap';
-import SearchBar from '../../containers/SearchBar';
+import { Nav, NavItem, Row, Col } from 'reactstrap';
+
 import './styles.css';
 
 class HeaderNoSearch extends Component {

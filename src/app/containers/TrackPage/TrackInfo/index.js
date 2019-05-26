@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import {Row,Col,Badge} from 'reactstrap';
-import {PropTypes} from 'prop-types';
-import ListenersPlaycountButtons from '../../../components/ListenersPlaycountButtons';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Row,Col,Badge } from 'reactstrap';
+import { PropTypes } from 'prop-types';
+
+import ListenersPlaycountButtons from 'app/components/ListenersPlaycountButtons';
 
 class TrackInfo extends Component{
     static propTypes ={

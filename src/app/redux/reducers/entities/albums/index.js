@@ -1,6 +1,6 @@
-import {GET_ARTIST_TOP_ALBUMS_SUCCESS} from '../../../actions/artist';
-import {GET_ALBUM_INFO_SUCCESS } from '../../../actions/album';
-import { GET_TRACK_INFO_SUCCESS } from '../../../actions/track';
+import { GET_ARTIST_TOP_ALBUMS_SUCCESS } from 'app/redux/actions/artist';
+import { GET_ALBUM_INFO_SUCCESS } from 'app/redux/actions/album';
+import { GET_TRACK_INFO_SUCCESS } from 'app/redux/actions/track';
 
 const initialState ={
     allIds: [],

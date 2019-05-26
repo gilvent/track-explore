@@ -1,7 +1,9 @@
 import React, { Component} from 'react';
-import {Row,Col} from 'reactstrap';
-import './ListenersPlaycountButtons.css';
+import { Row,Col } from 'reactstrap';
 import {PropTypes} from 'prop-types';
+
+import './ListenersPlaycountButtons.css';
+
 
 class ListenersPlaycountButtons extends Component{
     static propTypes = {

@@ -1,10 +1,11 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import {Row,Col,Button} from 'reactstrap';
+import React, { Component } from 'react';
+import { Row,Col } from 'reactstrap';
 import {PropTypes} from 'prop-types'
+
+import NetworkErrorIcon from 'app/components/NetworkErrorIcon';
+import ListenersPlaycountButtons from 'app/components/ListenersPlaycountButtons';
+
 import './InfoPanel.css';
-import NetworkErrorIcon from '../../../components/NetworkErrorIcon';
-import ListenersPlaycountButtons from '../../../components/ListenersPlaycountButtons';
 
 class InfoPanel extends Component {
     static propTypes ={

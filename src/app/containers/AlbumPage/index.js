@@ -1,17 +1,18 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {Row,Col} from 'reactstrap'
-import {ScaleLoader} from 'react-spinners';
-import MainHeader from '../../components/Headers/MainHeader';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {Row,Col} from 'reactstrap';
 import {Link} from 'react-router-dom';
-import NetworkErrorIcon from '../../components/NetworkErrorIcon';
-import InfoPanel from './InfoPanel';
-import albumActions from '../../redux/actions/album';
-import albumSelectors from '../../redux/selectors/entities/albums';
-import './AlbumPage.css';
-import albumPageSelectors from '../../redux/selectors/ui/albumPage';
-import TrackList from './TrackList';
+import {ScaleLoader} from 'react-spinners';
 
+import MainHeader from 'app/components/Headers/MainHeader';
+import NetworkErrorIcon from 'app/components/NetworkErrorIcon';
+import albumActions from 'app/redux/actions/album';
+import albumSelectors from 'app/redux/selectors/entities/albums';
+import albumPageSelectors from 'app/redux/selectors/ui/albumPage';
+
+import InfoPanel from './InfoPanel';
+import TrackList from './TrackList';
+import './AlbumPage.css';
 
 class AlbumPage extends Component{
     getUrlParams(props){

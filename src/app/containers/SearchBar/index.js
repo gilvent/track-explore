@@ -1,17 +1,21 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {
-  InputGroup, InputGroupAddon, InputGroupButtonDropdown, InputGroupDropdown, Input,
-  Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem
+  InputGroup, InputGroupAddon, Input
  } from 'reactstrap';
-import logo from '../../../assets/search-icon.png';
-import './styles.css';
+
+import searchActions from 'app/redux/actions/search';
+import uiActions from 'app/redux/actions/ui';
+import searchSelectors from 'app/redux/selectors/search';
+import searchUiSelectors from 'app/redux/selectors/ui/search';
+import logo from 'assets/search-icon.png';
+
 import ResultDropdown from './ResultDropdown';
 import TypeButton from './TypeButton';
-import searchActions from '../../redux/actions/search';
-import uiActions from '../../redux/actions/ui';
-import searchSelectors from '../../redux/selectors/search';
-import searchUiSelectors from '../../redux/selectors/ui/search';
+import './styles.css';
+
+
+
 
 
 class SearchBar extends Component{

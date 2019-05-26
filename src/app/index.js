@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Provider} from 'react-redux';
-import getStore from './redux/store.js';
 import { BrowserRouter,Switch } from 'react-router-dom';
+
+import getStore from './redux/store.js';
 import MainLayout from './layouts/MainLayout';
 import {MainRoutes} from './routes';
 

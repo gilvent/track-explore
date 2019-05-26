@@ -1,16 +1,19 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {Row,Col} from 'reactstrap';
-import './styles.css';
-import {ScaleLoader} from 'react-spinners';
-import MainHeader from '../../components/Headers/MainHeader';
-import NetworkErrorIcon from '../../components/NetworkErrorIcon';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Row, Col} from 'reactstrap';
+import { ScaleLoader } from 'react-spinners';
+
+import MainHeader from 'app/components/Headers/MainHeader';
+import NetworkErrorIcon from 'app/components/NetworkErrorIcon';
+import artistPageSelectors from 'app/redux/selectors/ui/artistPage';
+import artistActions from 'app/redux/actions/artist';
+import artistSelectors from 'app/redux/selectors/entities/artists';
+
 import BioPanel from './BioPanel';
 import TabPanel from './TabPanel';
 import SimilarArtistsList from './SimilarArtistsList';
-import artistPageSelectors from '../../redux/selectors/ui/artistPage';
-import artistActions from '../../redux/actions/artist';
-import artistSelectors from '../../redux/selectors/entities/artists';
+
+import './styles.css';
 
 class ArtistPage extends Component {
     getArtistNameFromPath(props){

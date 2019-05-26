@@ -1,4 +1,4 @@
-import { GET_ALBUM_INFO, GET_ALBUM_INFO_SUCCESS,GET_ALBUM_INFO_FAIL } from "../../../actions/album";
+import { GET_ALBUM_INFO, GET_ALBUM_INFO_SUCCESS,GET_ALBUM_INFO_FAIL } from "app/redux/actions/album";
 
 const initialState = {
     isFetching : false,

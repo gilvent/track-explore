@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './styles.css';
-import {Row,Col,Container} from 'reactstrap';
-import Footer from '../../components/Footers/MainFooter';
-import Header from '../../components/Headers/MainHeader';
+import { Container } from 'reactstrap';
+
+import Footer from 'app/components/Footers/MainFooter';
 
 class MainLayout extends Component{
     componentDidMount(){

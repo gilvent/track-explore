@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import {Row,Col, Container} from 'reactstrap';
-import github_logo from '../../../assets/github-logo.png';
+import { Row,Col } from 'reactstrap';
+
+import github_logo from 'assets/github-logo.png';
 import './styles.css';
 
 class MainFooter extends Component{

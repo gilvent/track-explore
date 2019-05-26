@@ -1,7 +1,7 @@
 import { 
     GET_ARTIST_INFO_SUCCESS,GET_ARTIST_TOP_TRACKS_SUCCESS,GET_ARTIST_TOP_ALBUMS_SUCCESS 
-} from "../../../actions/artist";
-import { GET_TRACK_INFO_SUCCESS } from "../../../actions/track";
+} from 'app/redux/actions/artist';
+import { GET_TRACK_INFO_SUCCESS } from 'app/redux/actions/track';
 
 const initialState ={
     allNames: [],

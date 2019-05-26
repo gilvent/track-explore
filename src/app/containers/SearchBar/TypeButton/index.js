@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {
-   InputGroupButtonDropdown,
-    Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem
+   InputGroupButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem
 } from 'reactstrap';
 import PropTypes from 'prop-types';
+
 import './styles.css';
 
 class TypeButton extends Component {

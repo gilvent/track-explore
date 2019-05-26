@@ -2,10 +2,10 @@ import {
     SEARCH_ARTIST,SEARCH_ALBUM,SEARCH_TRACK,
     SEARCH_ARTIST_SUCCESS,SEARCH_ALBUM_SUCCESS, SEARCH_TRACK_SUCCESS,
     SEARCH_ARTIST_FAIL,SEARCH_ALBUM_FAIL,SEARCH_TRACK_FAIL
-} from '../../../actions/search';
+} from 'app/redux/actions/search';
 import {
     CLOSE_SEARCH_RESULT
-} from '../../../actions/ui';
+} from 'app/redux/actions/ui';
 
 const initialState = {
     isLoading: false,
