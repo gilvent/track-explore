@@ -1,3 +1,5 @@
+@import "assets/scss/_shared.scss";
+
 .title-container {
     text-align: center;
     margin-top:5%;
@@ -18,8 +20,8 @@
 }
 
 #btn-lfm{
-    background-color: #bb0000;
-    border-color:#dee2e6
+    background-color: $lastfm-primary;
+    border-color:$lastfm-secondary
 }
 #btn-lfm :hover{
     background-color: rgba(0, 0, 0, 0.322);

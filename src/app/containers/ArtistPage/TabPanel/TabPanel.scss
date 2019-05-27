@@ -1,16 +1,18 @@
+@import "assets/scss/_shared.scss";
+
 #tabs-container{
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid $lastfm-secondary;
     color:white
 }
 
 .tabs-item .nav-link.active{
     color: white;
-    background-color: #bb0000;
-    border-color: #bb0000 #bb0000 #dee2e6;
+    background-color: $lastfm-primary;
+    border-color: $lastfm-primary $lastfm-primary $lastfm-secondary;
 }
 
 .tabs-item .nav-link:hover {
-    border-color: #e9ecef #e9ecef #dee2e6;
+    border-color: #e9ecef #e9ecef $lastfm-secondary;
     cursor: pointer;
 }
 
@@ -19,7 +21,6 @@
     max-height:18em;
     overflow:auto;
     overflow-x:hidden;
-    /* background-color: rgba(0, 0, 0, 0.8); */
 }
 
 .data-list {
@@ -41,23 +42,6 @@
 .list-group-item-action:focus, .list-group-item-action:hover{
     color:#FFF;
     background-color: #bb0000a8
-}
-
-.data-list-container::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: rgba(0,0,0,0.3);
-}
-
-.data-list-container::-webkit-scrollbar
-{
-	width: 6px;
-    background-color: rgba(0,0,0,0.3);
-}
-
-.data-list-container::-webkit-scrollbar-thumb
-{
-	background-color: #dee2e6;
 }
 
 

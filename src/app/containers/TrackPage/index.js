@@ -15,7 +15,7 @@ import artistSelectors from 'app/redux/selectors/entities/artists';
 import TrackInfo from './TrackInfo';
 import TabPanel from './TabPanel';
 import SimilarTracksList from './SimilarTracksList';
-import './TrackPage.css';
+import './TrackPage.scss';
 
 
 class TrackPage extends Component{

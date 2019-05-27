@@ -13,7 +13,7 @@ import BioPanel from './BioPanel';
 import TabPanel from './TabPanel';
 import SimilarArtistsList from './SimilarArtistsList';
 
-import './styles.css';
+import './ArtistPage.scss';
 
 class ArtistPage extends Component {
     getArtistNameFromPath(props){

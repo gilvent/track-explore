@@ -4,7 +4,7 @@ import {
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import './styles.css';
+import './TypeButton.scss';
 
 class TypeButton extends Component {
     constructor(props){

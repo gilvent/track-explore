@@ -1,0 +1,8 @@
+@import "assets/scss/_shared.scss";
+.shadow {
+    @include medium-colored-shadow($lastfm-shadow-color);
+}
+
+.icon-container :hover{
+    @include medium-colored-shadow($lastfm-shadow-color);
+}

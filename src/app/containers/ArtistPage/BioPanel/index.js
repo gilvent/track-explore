@@ -4,7 +4,7 @@ import {PropTypes} from 'prop-types';
 
 import NetworkErrorIcon from 'app/components/NetworkErrorIcon';
 
-import './BioPanel.css';
+import './BioPanel.scss';
 
 class BioPanel extends Component {
     static propTypes ={
@@ -24,7 +24,7 @@ class BioPanel extends Component {
                     data.bio_content ? 
                     <Row style={{color:"#FFFFFF"}}>
                         <Col id="bio-published"><span>Bio published on {data.bio_published}</span></Col>
-                        <Col id="bio-content-container" className="custom-scrollbar" md={12} >
+                        <Col id="bio-content-container" className="circle-scrollbar" md={12} >
                             {data.bio_content}
                         </Col>
                     </Row> 

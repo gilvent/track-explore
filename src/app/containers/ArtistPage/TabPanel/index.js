@@ -9,7 +9,7 @@ import classnames from 'classnames';
 
 import NetworkErrorIcon from 'app/components/NetworkErrorIcon';
 
-import './styles.css';
+import './TabPanel.scss';
 
 
 export default class TabPanel extends Component {
@@ -97,7 +97,7 @@ export default class TabPanel extends Component {
           <TabPane tabId="top-songs">
             <Row>
               <Col sm="12">
-                <ListGroup className="data-list-container">
+                <ListGroup className="data-list-container rect-scrollbar">
                     {topTrackList.length!=0 ? topTrackList : !this.props.isLoading &&
                     <NetworkErrorIcon size="3em" padding="5em" text="Failed to load top tracks" textColor="white"/>}
                 </ListGroup>
@@ -107,7 +107,7 @@ export default class TabPanel extends Component {
           <TabPane tabId="top-albums">
             <Row>
               <Col sm="12">
-                <ListGroup  className="data-list-container">
+                <ListGroup  className="data-list-container rect-scrollbar">
                     {topAlbumsList.length!=0 ? topAlbumsList : !this.props.isLoading &&
                     <NetworkErrorIcon size="3em" padding="5em" text="Failed to load top albums" textColor="white"/>}
                 </ListGroup>

@@ -1,6 +1,7 @@
+@import "assets/scss/_shared.scss";
 .listeners-playcount-buttons {
     background-color: #000;
-    border-color:#bb0000;
+    border-color:$lastfm-primary;
     color:#FFF;
     border-style:solid;
     padding:1%; 
@@ -12,6 +13,6 @@
     text-align: center
 }
 .listeners-playcount-buttons :hover .album-buttons{ 
-    background-color:#bb0000 !important;
-    border-color:#bb0000;
+    background-color:$lastfm-primary;
+    border-color:$lastfm-primary;
 }

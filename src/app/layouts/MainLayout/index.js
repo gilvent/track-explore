@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './styles.css';
 import { Container } from 'reactstrap';
 
 import Footer from 'app/components/Footers/MainFooter';
+
+import './MainLayout.scss';
 
 class MainLayout extends Component{
     componentDidMount(){

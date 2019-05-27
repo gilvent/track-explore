@@ -1,0 +1,39 @@
+@import "assets/scss/_shared.scss";
+
+#tabs-container{
+    border-bottom: 1px solid $lastfm-secondary;
+    color:white
+}
+
+.tabs-item .nav-link.active{
+    color: white;
+    background-color: $lastfm-primary;
+    border-color: $lastfm-primary $lastfm-primary $lastfm-secondary;
+}
+
+.tabs-item .nav-link:hover {
+    border-color: #e9ecef #e9ecef $lastfm-secondary;
+    cursor: pointer;
+}
+
+
+
+.track-tab-container {
+    margin-top:1%;
+	height:25em;
+	overflow:auto;
+	overflow-x:hidden;
+    text-align:left;
+    font-size:90%
+}
+#track-wiki-tab-container {
+    //box-shadow: 0 4px 8px 0 rgba(221, 12, 12, 0.2), 0 3px 20px 0 rgba(231, 0, 0, 0.945);
+    @include medium-colored-shadow($lastfm-shadow-color);
+    padding:3%;
+}
+#track-lyric-tab-container {
+    @include medium-colored-shadow(#fd583c);
+    padding:3%;
+}
+
+

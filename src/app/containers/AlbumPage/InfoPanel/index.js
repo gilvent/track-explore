@@ -5,7 +5,7 @@ import {PropTypes} from 'prop-types'
 import NetworkErrorIcon from 'app/components/NetworkErrorIcon';
 import ListenersPlaycountButtons from 'app/components/ListenersPlaycountButtons';
 
-import './InfoPanel.css';
+import './InfoPanel.scss';
 
 class InfoPanel extends Component {
     static propTypes ={
@@ -20,7 +20,7 @@ class InfoPanel extends Component {
                 {
                     albumData.summary ? 
                     <Row style={{color:"#FFFFFF",paddingTop:"1em",paddingBottom:"1em"}} >
-                        <Col id="album-summary-container" className="custom-scrollbar" md={12} >
+                        <Col id="album-summary-container" className="circle-scrollbar" md={12} >
                             {albumData.summary}
                         </Col>
                     </Row> 

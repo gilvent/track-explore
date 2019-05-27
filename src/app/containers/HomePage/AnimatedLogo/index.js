@@ -4,7 +4,7 @@ import musixmatch_logo from 'assets/musixmatch-logo.png';
 import lastfm_logo from 'assets/lastfm-logo.png';
 import react_logo from 'assets/react-logo.svg';
 
-import './styles.css';
+import './AnimatedLogo.scss';
 
 export const AnimatedLogo = (props) => {
     return (

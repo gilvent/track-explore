@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import NetworkErrorIcon from 'app/components/NetworkErrorIcon';
 
-import './TrackList.css';
+import './TrackList.scss';
 
 export default class TrackList extends Component {
   static propTypes = {
@@ -38,7 +38,7 @@ export default class TrackList extends Component {
                 </Col>
             </Row> 
             : tracksList.length != 0 ?
-            <ListGroup flush id="album-tracks-container" >
+            <ListGroup flush id="album-tracks-container" className="rect-scrollbar">
                 {tracksList}
             </ListGroup>
             :

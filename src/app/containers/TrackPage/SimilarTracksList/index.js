@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 
 import NetworkErrorIcon from 'app/components/NetworkErrorIcon';
 
-import './SimilarTracksList.css';
+import './SimilarTracksList.scss';
 
 
 export default class SimilarTracksList extends Component {
@@ -56,7 +56,7 @@ export default class SimilarTracksList extends Component {
                 </Col>
             </Row> 
             : tracksList.length != 0 ?
-            <ListGroup flush id="similar-tracks-container" >
+            <ListGroup flush id="similar-tracks-container" className="rect-scrollbar">
                 {tracksList}
             </ListGroup>
             :

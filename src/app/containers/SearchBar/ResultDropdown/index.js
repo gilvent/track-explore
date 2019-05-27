@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 import {ScaleLoader} from 'react-spinners';
 import PropTypes from 'prop-types';
 
-import './styles.css';
+import './ResultDropdown.scss';
 
 class ResultDropdown extends React.Component {
   constructor(props) {
@@ -56,7 +56,7 @@ class ResultDropdown extends React.Component {
               data-toggle="dropdown"
               aria-expanded={isOpen}>
           </DropdownToggle>
-          <DropdownMenu id="result-list-container">
+          <DropdownMenu id="result-list-container" className="rect-scrollbar">
               <Col style={{textAlign:"center"}}>
                   <ScaleLoader className="loading-overlay" color={"#bb0000"} loading={isLoading}/>
               </Col>

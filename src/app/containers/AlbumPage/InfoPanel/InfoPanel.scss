@@ -1,0 +1,12 @@
+@import "assets/scss/_shared.scss";
+
+#album-summary-container {
+    margin-top:1%;
+	height:19em;
+	overflow:auto;
+	overflow-x:hidden;
+	text-align:left;
+    font-size:80%;
+    @include medium-colored-shadow($lastfm-shadow-color);
+    padding:3%;
+}

@@ -7,7 +7,7 @@ import classnames from 'classnames';
 
 import NetworkErrorIcon from 'app/components/NetworkErrorIcon';
 
-import './TabPanel.css';
+import './TabPanel.scss';
 
 
 export default class Example extends Component {
@@ -61,13 +61,13 @@ export default class Example extends Component {
                 
                 {this.props.wiki ? 
                     <Row style={{color:"#FFFFFF",paddingTop:"1em",paddingBottom:"1em"}} >
-                        <Col id="track-wiki-tab-container" className="track-tab-container" md={12}>
+                        <Col id="track-wiki-tab-container" className="track-tab-container rect-scrollbar" md={12}>
                             {this.props.wiki}
                         </Col>
                     </Row> 
                  : !this.props.isFetchingTrack &&
                     <Row style={{color:"#FFFFFF",paddingTop:"1em",paddingBottom:"1em"}} >
-                        <Col id="track-wiki-tab-container" className="track-tab-container" md={12}>
+                        <Col id="track-wiki-tab-container" className="track-tab-container rect-scrollbar" md={12}>
                             <NetworkErrorIcon size="4em" padding="5em" text="No available wiki" 
                                               textColor="white"/>
                         </Col>

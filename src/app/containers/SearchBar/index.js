@@ -12,7 +12,7 @@ import logo from 'assets/search-icon.png';
 
 import ResultDropdown from './ResultDropdown';
 import TypeButton from './TypeButton';
-import './styles.css';
+import './SearchBar.scss';
 
 
 
@@ -70,7 +70,7 @@ class SearchBar extends Component{
 
      render(){
         let {input} = this.state;
-        let {ResultByQuery,CloseSearchResult,searchResultOpen,isLoading,SearchType,errorMessage} = this.props;
+        let {ResultByQuery,searchResultOpen,isLoading,SearchType,errorMessage} = this.props;
         var results = ResultByQuery(input) ? ResultByQuery(input) : {};
          return (
             <div>
@@ -78,7 +78,7 @@ class SearchBar extends Component{
                 <InputGroupAddon id="left-addon" addonType="prepend" tag="div">
                     <img id="search-logo" src={logo}/>
                 </InputGroupAddon>
-                <Input disabled={isLoading} onChange={this.handleInput} id="search-box" placeholder="Type a name ..."/>
+                <Input autoComplete="off" disabled={isLoading} onChange={this.handleInput} id="search-box" placeholder="Type a name ..."/>
                 <TypeButton disabled={isLoading} onSelectType={this.handleTypeSelection} type={SearchType}/>
             </InputGroup>
             <ResultDropdown results={results} 

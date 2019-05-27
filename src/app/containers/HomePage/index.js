@@ -4,10 +4,10 @@ import { Row,Col,Button } from 'reactstrap';
 
 import HeaderNoSearch from 'app/components/Headers/HeaderNoSearch';
 import SearchBar from 'app/containers/SearchBar';
-import { LASTFM_PRIMARY,LASTFM_SECONDARY, MUSIXMATCH_PRIMARY, MUSIXMATCH_SECONDARY} from 'app/shared/colors';
+import { MUSIXMATCH_PRIMARY, MUSIXMATCH_SECONDARY} from 'app/shared/colors';
 
 import { AnimatedLogo } from './AnimatedLogo';
-import './styles.css';
+import './HomePage.scss';
 
 class HomePage extends Component{
     constructor(props) {

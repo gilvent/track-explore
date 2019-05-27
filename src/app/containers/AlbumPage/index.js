@@ -12,7 +12,7 @@ import albumPageSelectors from 'app/redux/selectors/ui/albumPage';
 
 import InfoPanel from './InfoPanel';
 import TrackList from './TrackList';
-import './AlbumPage.css';
+import './AlbumPage.scss';
 
 class AlbumPage extends Component{
     getUrlParams(props){

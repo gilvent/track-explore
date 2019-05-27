@@ -1,0 +1,20 @@
+@import "assets/scss/_shared.scss";
+
+.similar-track-link :hover {
+    color: $lastfm-primary;
+}
+
+.similar-tracks-list{
+    background-color: rgba(0,0,0,0.3);
+    cursor:pointer
+}
+
+#similar-tracks-container{
+    height:19em;
+    overflow-y:auto;
+    overflow-x: hidden;
+    color: $lastfm-secondary;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+

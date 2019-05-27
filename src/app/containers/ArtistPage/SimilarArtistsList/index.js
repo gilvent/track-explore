@@ -3,7 +3,7 @@ import { Row,Col,Tooltip } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
-import './SimilarPanel.css';
+import './SimilarPanel.scss';
 
 class SimilarArtistsList extends Component {
     constructor(props){
